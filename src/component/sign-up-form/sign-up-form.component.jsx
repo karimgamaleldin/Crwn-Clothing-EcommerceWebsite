@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { createAuthUserEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
-
+import FormInput from '../form-input/form-input.component';
 const defaultFormFields = {
     displayName : '',
     email : '',
@@ -48,14 +48,35 @@ const SignUpForm = () => {
                 Sign up
             </h1>
             <form onSubmit={handleSubmit}>
-                <label>Display name</label>
-                <input required type = "text" onChange={handleChange} name = "displayName" value = {displayName}/>
-                <label>Email</label>
-                <input required type = "email" onChange={handleChange} name = "email"  value = {email}/>
-                <label>Password</label>
-                <input required type = "password" onChange={handleChange} name = "password"  value = {password}/>
-                <label>Confirm Password</label>
-                <input required type = "password" onChange={handleChange} name = "confirmPassword"  value = {confirmPassword}/>
+                <FormInput 
+                required 
+                label = "Display Name"
+                type = "text" 
+                onChange={handleChange} 
+                name = "displayName" 
+                value = {displayName}/>
+                <FormInput 
+                required 
+                label = "email"
+                type = "email" 
+                onChange={handleChange} 
+                name = "email"  
+                value = {email}
+                />
+                <FormInput 
+                required 
+                label = "password"
+                type = "password" 
+                onChange={handleChange} 
+                name = "password"  
+                value = {password}/>
+                <FormInput 
+                required 
+                label = "password"
+                type = "password" 
+                onChange={handleChange} 
+                name = "confirmPassword"  
+                value = {confirmPassword}/>
                 <button type = "submit">Sign Up</button>
             </form>
         </div>
