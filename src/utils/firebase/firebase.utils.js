@@ -29,8 +29,9 @@ const firebaseConfig = {
   provider.setCustomParameters(x);
 
 export const auth = getAuth();
+// the signInWithPopup is general that is specified using the provider
 export const signInWithGooglePopup = () => signInWithPopup(auth , provider); 
-
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth , provider);
 export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (userAuth) => {
