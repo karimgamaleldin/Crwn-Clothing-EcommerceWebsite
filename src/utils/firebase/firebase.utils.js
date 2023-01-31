@@ -5,7 +5,8 @@ import {getAuth,
         GoogleAuthProvider,
         createUserWithEmailAndPassword,
         signInWithEmailAndPassword,
-        signOut
+        signOut, 
+        onAuthStateChanged
       } from 'firebase/auth'; 
 import {
   getFirestore,
@@ -32,6 +33,7 @@ const firebaseConfig = {
   }
   provider.setCustomParameters(x);
 
+// getAuth() presists even if we refresh
 export const auth = getAuth();
 // the signInWithPopup is general that is specified using the provider
 export const signInWithGooglePopup = () => signInWithPopup(auth , provider); 
@@ -72,3 +74,6 @@ export const createUserDocumentFromAuth = async (userAuth , additionalInformatio
 
 
 export const signOutUser = async () => await signOut(auth);
+
+
+export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth , callback);
