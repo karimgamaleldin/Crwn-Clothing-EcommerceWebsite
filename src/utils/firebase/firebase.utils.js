@@ -13,6 +13,10 @@ import {
   doc,
   getDoc,
   setDoc,
+  collection,
+  writeBatch,
+  query,
+  getDocs
 } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -77,3 +81,27 @@ export const signOutUser = async () => await signOut(auth);
 
 
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth , callback);
+
+export const addCollectionAndDocuments = async (collectionKey , objectstoAdd) => {
+  const collectionRef = collection(db , collectionKey);
+  // a batch is to make sure all the actions related to each other are done together "transaction"
+  const batch = writeBatch(db);
+  objectstoAdd.forEach((object) => {
+    const docRef = doc(collectionRef , object.title.toLowerCase());
+    batch.set(docRef , object);
+  });
+  await batch.commit();
+  console.log('done');
+}
+
+export const getCategoriesAndDocuments = async () => {
+  const collectionRef = collection(db , 'categories')
+  const q = query(collectionRef);
+  const querySnapShot = await getDocs(q);
+  const categoryMap = querySnapShot.docs.reduce((acc , docSnapShot) => {
+    const {title , items} = docSnapShot.data();
+    acc[title.toLowerCase()] = items;
+    return acc;
+  } , {});
+  return categoryMap;
+}
