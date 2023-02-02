@@ -1,1 +1,1 @@
-# This is a clothing website created using React and Firebase. It was made with the help of the course : Complete React Developer in 2023 (w/ Redux, Hooks, GraphQL) by Andrei Neagoie , Yihua Zhang , Zero to Mastery. Enjoy!!! 🔥 
+### This is a clothing website created using React and Firebase. It was made with the help of the course : Complete React Developer in 2023 (w/ Redux, Hooks, GraphQL) by Andrei Neagoie , Yihua Zhang , Zero to Mastery. Enjoy!!! 🔥 
