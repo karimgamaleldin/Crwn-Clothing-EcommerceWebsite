@@ -4,7 +4,10 @@ const Home = () => {
  
   
   return (
-    <Directory/>
+    <div>
+          <Directory/>
+
+    </div>
   );
 }
 
