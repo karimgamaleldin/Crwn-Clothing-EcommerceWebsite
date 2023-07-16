@@ -25,7 +25,7 @@ const removeCartItem = (cartItems , cartItemToRemove) => {
         );
 
     if(existingCartItem.quantity === 1){
-        return cartItems.filter(cartItem => cartItem.id != cartItemToRemove.id);
+        return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id);
     }    
 
     // case of new item
@@ -35,7 +35,7 @@ const removeCartItem = (cartItems , cartItemToRemove) => {
         : cartItem )
 }
 const clearCartItem = (cartItems , productToClear) => {
-    return cartItems.filter(cartItem => cartItem.id != productToClear.id);
+    return cartItems.filter(cartItem => cartItem.id !== productToClear.id);
 
 }
 

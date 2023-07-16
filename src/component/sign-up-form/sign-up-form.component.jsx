@@ -1,4 +1,4 @@
-import {useState , useContext} from 'react';
+import {useState} from 'react';
 import { createAuthUserEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
 import FormInput from '../form-input/form-input.component';
 import './sign-up.styles.scss';
@@ -28,7 +28,7 @@ const SignUpForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault(); // to prevent any behaviour
-        if(password != confirmPassword ){
+        if(password !== confirmPassword ){
             alert("password do not match");
             return;
         }
