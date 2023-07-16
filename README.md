@@ -1,7 +1,7 @@
 # CRWN Clothing - Ecommerce Website
 
 
-Welcome to CRWN Clothing! This repository houses the codebase for our e-commerce website, built using React and Firebase, where you can explore and purchase the latest and trendiest clothes. Our mission is to provide a seamless online shopping experience, allowing customers to discover a wide range of high-quality apparel.
+Welcome to CRWN Clothing! This repository houses the codebase for our e-commerce website, built using React and Firebase, where you can explore and purchase the latest and trendiest clothes. Our mission is to provide a seamless online shopping experience, allowing customers to discover a wide range of high-quality apparel.  View site: https://remarkable-kleicha-4d8065.netlify.app/
 
 ## Table of Contents
 
